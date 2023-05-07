@@ -1,0 +1,32 @@
+[package]
+name = "newsletter_mailer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+path = "src/main.rs"
+name = "newsletter_mailer"
+
+[dependencies]
+config = "0.13"
+actix-web = "4"
+tokio = { version = "1.28", features = ["macros", "rt-multi-thread"]}
+reqwest = "0.11"
+serde = { version = "1", features = ["derive"]}
+
+[dependencies.sqlx]
+version = '0.6'
+default-features = false
+features = [
+    "runtime-tokio-rustls",
+    "macros",
+    "postgres",
+    "uuid",
+    "chrono",
+    "migrate"
+]
