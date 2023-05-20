@@ -2,7 +2,7 @@
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true,
-        "editor.fontSize": 16,
+        "editor.fontSize": 19,
         "editor.inlayHints.fontSize": 11,
     }
 }
