@@ -1,0 +1,27 @@
+name: newsletter_mailer
+
+region: nyc1
+
+services:
+
+  -name: newsletter_mailer
+  
+  dockerfile_path: Dockerfile
+  source_dir: .
+  
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: kpue/newsletter_mailer
+  
+  health_check:
+    http_path: /health_check
+
+  http_port: 8000
+
+  instance_count: 1
+  instance_size_slug: basic-xxs
+
+  routes:
+    - path: /
+
